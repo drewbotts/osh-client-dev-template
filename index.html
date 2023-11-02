@@ -12,13 +12,14 @@
                 /* height: calc(100% - 15px); */
                 height: 100%;
                 overflow: hidden;
-                background-color: black;
+                background-color: white;
+                margin: 100px;
             }
 
             #left {
                 flex-direction: column;
                 /* width:calc(75% - 50px); */
-                width:75%;
+                width:60%;
                 float:left;
                 height:100%;
             }
@@ -26,21 +27,26 @@
             #right {
                 flex-direction: column;
                 /* width:calc(25% - 50px); */
-                width:25%;
+                width:40%;
                 float:left;
                 height:100%;
             }
 
-            div.video-h264 {
+            div.video-window {
                 width: auto;
                 /* padding: 8px; */
                 /* border: 1px solid #dee2e6; */
                 overflow: hidden;
                 /* height:calc(50% - 40px); */
-                height:30%;
+                /*height:30%;*/
+                margin: 20px;
             }
 
-            div.video-h264 canvas {
+            div.video-window canvas {
+                width: 100%;
+            }
+
+            div.video-window img {
                 width: 100%;
             }
 
@@ -59,19 +65,35 @@
                 height:30%;
             }
 
+            div.gamma-chart-window {
+                width:100%;
+                overflow: hidden;
+                height: 30%;
+            }
+
+            div.neutron-chart-window {
+                width: 100%;
+                overflow: hidden;
+                height: 30%;
+            }
+
         </style>
     </head>
     <body>
         <div id="container">
+
             <div id="left">
-                <div id="cesium-container"></div>
-            </div>
+                <div class="title">Gamma Scan</div>
+                <div class="gamma-chart-window" id="gamma-chart-window"></div>
+            <div class="title">Neutron Scan</div>
+            <div class="neutron-chart-window" id="neutron-chart-window"></div>
+                </div>
+
             <div id="right">
-                <div class="title">UAV Video Stream</div>
-                <div id="video-window"></div>
-                <div class="title">UAV</div>
-                <div class="alt-chart-window" id="alt-chart-window"></div>
+                <div class="title">Camera Stream</div>
+                <div class="video-window" id="video-window"></div>
             </div>
         </div>
+
     </body>
 </html>
