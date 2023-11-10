@@ -22,8 +22,8 @@ let testStart = "2023-11-01T15:03:13.515Z";
 let testEnd = "2023-11-01T15:08:14.515Z";
 
 // Full Database
-let start = gammaAOStart;
-let end = gammaAOEnd;
+let start = fullStart;
+let end = fullEnd;
 let offeringId = "urn:osh:sensor:rapiscanrpm0001";
 let videoOfferingID = "urn:android:device:3260a03a280be236";
 let gammaProperty = "http://www.opengis.net/def/gamma-scan";
@@ -64,7 +64,7 @@ let gammaHiDS = new SosGetResult("Gamma-Scan", {
     protocol:"ws",
 });
 
-// dataSources.push(gammaHiDS);
+dataSources.push(gammaHiDS);
 
 
 let neutronDataSource = new SosGetResult("Neutron-Scan", {
@@ -93,7 +93,7 @@ let neutronHiDS = new SosGetResult("Neutron-Scan", {
     protocol:"ws",
 });
 
-// dataSources.push(neutronHiDS);
+dataSources.push(neutronHiDS);
 
 let cameraDataSource = new SosGetResult("Camera",{
     endpointUrl: server,
@@ -197,8 +197,8 @@ let cameraView = new VideoView({
     layers: [cameraVideoLayer]
 });
 
-gammaHiDS.connect();
-neutronHiDS.connect();
+// gammaHiDS.connect();
+// neutronHiDS.connect();
 // cameraDataSource.connect();
 
 
